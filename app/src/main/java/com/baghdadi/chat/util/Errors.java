@@ -1,0 +1,3 @@
+package com.baghdadi.chat.util;
+import com.google.firebase.FirebaseException;
+public final class Errors { private Errors(){} public static String text(Exception e){String c=e==null?"":e.getMessage(); if(c==null)c=""; if(c.contains("INVALID_LOGIN_CREDENTIALS")||c.contains("invalid-credential"))return "اسم المستخدم أو كلمة المرور غير صحيحة."; if(c.contains("EMAIL_EXISTS")||c.contains("email-already-in-use"))return "اسم المستخدم مستخدم بالفعل."; if(c.contains("WEAK_PASSWORD"))return "كلمة المرور ضعيفة."; if(c.contains("network"))return "تحقق من اتصال الإنترنت."; if(c.contains("PERMISSION_DENIED")||c.contains("permission-denied"))return "ليس لديك صلاحية لهذه العملية."; if(c.contains("quota"))return "تم تجاوز حد التخزين."; return c.isEmpty()?"حدث خطأ غير متوقع.":c;}}
